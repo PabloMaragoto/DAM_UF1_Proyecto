@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.uf1_proyecto"
-    compileSdk = 34
+    compileSdk = 35
     
 
     defaultConfig {
@@ -47,6 +47,8 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation("androidx.fragment:fragment:1.8.5")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.8.4")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
