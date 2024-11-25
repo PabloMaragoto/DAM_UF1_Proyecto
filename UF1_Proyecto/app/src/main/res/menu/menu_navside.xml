@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/homeFragment"
+            android:icon="@drawable/home_icon"
+            android:title="@string/home"
+            app:showAsAction="ifRoom" />
+
+        <item android:id="@+id/misPeliculasFragment"
+            android:icon="@drawable/rollo_pelicula_icon"
+            android:title="@string/myMovies"
+            app:showAsAction="ifRoom" />
+
+        <item android:id="@+id/misListasFragment"
+            android:icon="@drawable/listas_icon"
+            android:title="@string/myLists"
+            app:showAsAction="ifRoom" />
+
+        <item android:id="@+id/cinesCercanosFragment"
+            android:icon="@drawable/cine_icon"
+            android:title="@string/nearCinemas"
+            app:showAsAction="ifRoom" />
+
+        <item android:id="@+id/chatsFragment"
+            android:icon="@drawable/chat_icon"
+            android:title="@string/chats"
+            app:showAsAction="ifRoom" />
+    </group>
+
+    <item android:title="">
+        <menu>
+            <item android:id="@+id/ajustesFragment"
+                android:icon="@drawable/ajustes_icon"
+                android:title="@string/settings"
+                app:showAsAction="ifRoom"/>
+        </menu>
+    </item>
+
+</menu>
