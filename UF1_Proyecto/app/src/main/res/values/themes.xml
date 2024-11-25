@@ -5,5 +5,11 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
+    <style name="WhiteToolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="colorPrimary">@color/white</item> <!-- Fondo blanco -->
+        <item name="titleTextColor">@color/black</item> <!-- Texto del título en negro -->
+        <!--<item name="subtitleTextColor">#757575</item>--> <!-- Subtítulo (opcional) en gris -->
+    </style>
+
     <style name="Theme.UF1_Proyecto" parent="Base.Theme.UF1_Proyecto" />
 </resources>

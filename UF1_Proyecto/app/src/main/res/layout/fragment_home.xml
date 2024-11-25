@@ -1,41 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:fillViewport="true">
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="@string/friends"
-        android:background="@color/blue"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        />
+        android:orientation="vertical">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerPeliculas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="12dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@string/friends"
+            android:background="@color/blue"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="20sp" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="@string/list"
-        android:background="@color/blue"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerPeliculas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="550dp"
+            android:padding="16dp"
+            android:text="@string/list"
+            android:background="@color/blue"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="20sp" />
 
-
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

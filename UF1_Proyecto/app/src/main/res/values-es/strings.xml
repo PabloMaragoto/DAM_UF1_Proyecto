@@ -2,4 +2,15 @@
 <resources>
     <string name="friends">Amigos</string>
     <string name="list">Listas</string>
+    <string name="menu">Menú</string>
+    <string name="user">nombre usuario</string>
+    <string name="nearCinemas">Cines cercanos</string>
+    <string name="home">Inicio</string>
+    <string name="userPage">Página de usuario</string>
+    <string name="myMovies">Mis películas</string>
+    <string name="myLists">Mis listas</string>
+    <string name="chats">Chats</string>
+    <string name="settings">Ajustes</string>
+    <string name="lorem"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lobortis mollis vestibulum. Sed sed aliquet lectus. Duis vel ornare purus, eu sollicitudin massa. Nunc vitae massa mauris. Morbi elementum ac urna nec posuere. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed molestie elementum dolor tincidunt porta. Aliquam erat volutpat. </string>
+
 </resources>
