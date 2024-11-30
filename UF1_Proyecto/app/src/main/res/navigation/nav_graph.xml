@@ -7,36 +7,65 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.uf1_proyecto.HomeFragment"
-        android:label="HomeFragment" />
+        android:name="com.example.pruebapeliculasapp.views.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_peliculaInfoFragment"
+            app:destination="@id/peliculaInfoFragment" />
+
+    </fragment>
     <fragment
-        android:id="@+id/cinesCercanosFragment"
-        android:name="com.example.uf1_proyecto.CinesCercanosFragment"
-        android:label="fragment_cines_cercanos"
-        tools:layout="@layout/fragment_cines_cercanos" />
+        android:id="@+id/peliculaInfoFragment"
+        android:name="com.example.uf1_proyecto.views.PeliculaInfoFragment"
+        android:label="PeliculaInfoFragment" >
+
+        <argument
+            android:name="titulo"
+            app:argType="string" />
+        <argument
+            android:name="sinopsis"
+            app:argType="string" />
+        <argument
+            android:name="caratula"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_peliculaInfoFragment_to_caratulaPeliculaFragment"
+            app:destination="@id/caratulaPeliculaFragment" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/caratulaPeliculaFragment"
+        android:name="com.example.uf1_proyecto.views.CaratulaPeliculaFragment"
+        android:label="fragment_caratula_pelicula"
+        tools:layout="@layout/fragment_caratula_pelicula" >
+        <argument
+            android:name="caratula"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/usuarioFragment"
-        android:name="com.example.uf1_proyecto.UsuarioFragment"
+        android:name="com.example.uf1_proyecto.views.UsuarioFragment"
         android:label="fragment_usuario"
         tools:layout="@layout/fragment_usuario" />
     <fragment
         android:id="@+id/chatsFragment"
-        android:name="com.example.uf1_proyecto.ChatsFragment"
+        android:name="com.example.uf1_proyecto.views.ChatsFragment"
         android:label="fragment_chats"
         tools:layout="@layout/fragment_chats" />
     <fragment
         android:id="@+id/misPeliculasFragment"
-        android:name="com.example.uf1_proyecto.MisPeliculasFragment"
+        android:name="com.example.uf1_proyecto.views.MisPeliculasFragment"
         android:label="fragment_mis_peliculas"
         tools:layout="@layout/fragment_mis_peliculas" />
     <fragment
         android:id="@+id/misListasFragment"
-        android:name="com.example.uf1_proyecto.MisListasFragment"
+        android:name="com.example.uf1_proyecto.views.MisListasFragment"
         android:label="fragment_mis_listas"
         tools:layout="@layout/fragment_mis_listas" />
     <fragment
         android:id="@+id/ajustesFragment"
-        android:name="com.example.uf1_proyecto.AjustesFragment"
+        android:name="com.example.uf1_proyecto.views.AjustesFragment"
         android:label="fragment_ajustes"
         tools:layout="@layout/fragment_ajustes" />
 </navigation>

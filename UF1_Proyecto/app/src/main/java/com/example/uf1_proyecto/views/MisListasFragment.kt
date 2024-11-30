@@ -1,12 +1,14 @@
-package com.example.uf1_proyecto
+package com.example.uf1_proyecto.views
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.uf1_proyecto.R
 
-class UsuarioFragment : Fragment() {
+
+class MisListasFragment : Fragment() {
 
 
     override fun onCreateView(
@@ -14,7 +16,7 @@ class UsuarioFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_usuario, container, false)
+        return inflater.inflate(R.layout.fragment_mis_listas, container, false)
     }
 
 }
