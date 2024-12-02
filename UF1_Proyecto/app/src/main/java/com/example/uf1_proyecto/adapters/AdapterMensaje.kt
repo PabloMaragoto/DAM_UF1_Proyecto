@@ -39,7 +39,7 @@ class AdapterMensaje(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        if(viewType == 1){
+        if(viewType == ITEM_ENVIADO){
             val view: View =
                 LayoutInflater.from(context).inflate(R.layout.item_mensaje_enviado, parent, false)
             return EnviadoViewHolder(view)

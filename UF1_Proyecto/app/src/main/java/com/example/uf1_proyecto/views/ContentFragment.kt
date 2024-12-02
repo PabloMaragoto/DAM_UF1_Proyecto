@@ -1,8 +1,11 @@
 package com.example.uf1_proyecto.views
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
@@ -62,15 +65,26 @@ class ContentFragment : Fragment() {
         return view
     }
 
-    @Deprecated("Deprecated in Java")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-
-
-        //Recuperamos el controlador de navegación
         val navController = findNavController()
-        //Y lo vinculamos con los items del menú
-        NavigationUI.onNavDestinationSelected(item, navController)
+
+        if (item.itemId == R.id.logout) {
+            mAuth.signOut()
+
+            if (mAuth.currentUser == null) {
+                Log.d("Logout", "Sesión cerrada con éxito")
+            } else {
+                Log.d("Logout", "No se pudo cerrar sesión")
+            }
+
+            navController.setGraph(R.navigation.nav_graph_login)
+
+            navController.navigate(R.id.loginFragment)
+
+            return true
+        }
+
+        // No usar  onNavDestinationSelected para logout, ya que no es un destino
         return super.onOptionsItemSelected(item)
     }
 

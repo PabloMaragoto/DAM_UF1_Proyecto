@@ -29,6 +29,10 @@
     <fragment
         android:id="@+id/contentFragment"
         android:name="com.example.uf1_proyecto.views.ContentFragment"
-        android:label="ContentFragment" />
+        android:label="ContentFragment" >
+        <action
+            android:id="@+id/action_contentFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 
 </navigation>

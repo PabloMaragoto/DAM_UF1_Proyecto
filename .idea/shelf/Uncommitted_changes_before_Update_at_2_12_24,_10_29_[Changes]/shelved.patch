@@ -1,0 +1,114 @@
+Index: UF1_Proyecto/.idea/deploymentTargetSelector.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"deploymentTargetSelector\">\n    <selectionStates>\n      <SelectionState runConfigName=\"app\">\n        <option name=\"selectionMode\" value=\"DROPDOWN\" />\n        <DropdownSelection timestamp=\"2024-11-24T16:38:26.963829Z\">\n          <Target type=\"DEFAULT_BOOT\">\n            <handle>\n              <DeviceId pluginId=\"PhysicalDevice\" identifier=\"serial=RZCW51AG1FJ\" />\n            </handle>\n          </Target>\n        </DropdownSelection>\n        <DialogSelection />\n      </SelectionState>\n    </selectionStates>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/UF1_Proyecto/.idea/deploymentTargetSelector.xml b/UF1_Proyecto/.idea/deploymentTargetSelector.xml
+--- a/UF1_Proyecto/.idea/deploymentTargetSelector.xml	(revision 3d763f6e0794553f6f4677b271e2115a8161b818)
++++ b/UF1_Proyecto/.idea/deploymentTargetSelector.xml	(date 1732533437746)
+@@ -2,12 +2,12 @@
+ <project version="4">
+   <component name="deploymentTargetSelector">
+     <selectionStates>
+-      <SelectionState runConfigName="app">
++      <SelectionState runConfigName="MainActivity">
+         <option name="selectionMode" value="DROPDOWN" />
+-        <DropdownSelection timestamp="2024-11-24T16:38:26.963829Z">
++        <DropdownSelection timestamp="2024-11-25T09:32:44.280700822Z">
+           <Target type="DEFAULT_BOOT">
+             <handle>
+-              <DeviceId pluginId="PhysicalDevice" identifier="serial=RZCW51AG1FJ" />
++              <DeviceId pluginId="LocalEmulator" identifier="path=/home/sanclemente.local/a23pablomd/.android/avd/Pixel_8_Pro_API_35.avd" />
+             </handle>
+           </Target>
+         </DropdownSelection>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"NONE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"dfd05b19-6bf2-4a86-9efb-0107b2941877\" name=\"Changes\" comment=\"\" />\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ClangdSettings\">\n    <option name=\"formatViaClangd\" value=\"false\" />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;,\n    &quot;assignee&quot;: &quot;PabloMaragoto&quot;\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">{\n  &quot;selectedUrlAndAccountId&quot;: {\n    &quot;url&quot;: &quot;https://github.com/PabloMaragoto/DAM_UF1_Proyecto.git&quot;,\n    &quot;accountId&quot;: &quot;41243d29-602c-4d7c-ab86-94b6441db380&quot;\n  }\n}</component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;customColor&quot;: &quot;&quot;,\n  &quot;associatedIndex&quot;: 4\n}</component>\n  <component name=\"ProjectId\" id=\"2p73tzSmIDwYvO0wqVTtRKXjNm2\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"RunOnceActivity.cidr.known.project.marker\": \"true\",\n    \"RunOnceActivity.readMode.enableVisualFormatting\": \"true\",\n    \"cf.first.check.clang-format\": \"false\",\n    \"cidr.known.project.marker\": \"true\",\n    \"git-widget-placeholder\": \"main\",\n    \"kotlin-language-version-configured\": \"true\",\n    \"last_opened_file_path\": \"/opt/android/projects/DAM_UF1_Proyecto/UF1_Proyecto\",\n    \"settings.editor.selected.configurable\": \"editor.preferences.import\"\n  }\n}]]></component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"dfd05b19-6bf2-4a86-9efb-0107b2941877\" name=\"Changes\" comment=\"\" />\n      <created>1732103504650</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1732103504650</updated>\n    </task>\n    <servers />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 3d763f6e0794553f6f4677b271e2115a8161b818)
++++ b/.idea/workspace.xml	(date 1732719969666)
+@@ -4,7 +4,10 @@
+     <option name="autoReloadType" value="NONE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="dfd05b19-6bf2-4a86-9efb-0107b2941877" name="Changes" comment="" />
++    <list default="true" id="dfd05b19-6bf2-4a86-9efb-0107b2941877" name="Changes" comment="">
++      <change beforePath="$PROJECT_DIR$/UF1_Proyecto/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UF1_Proyecto/.idea/deploymentTargetSelector.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/UF1_Proyecto/app/src/main/java/com/example/uf1_proyecto/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/UF1_Proyecto/app/src/main/java/com/example/uf1_proyecto/HomeFragment.kt" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -37,19 +40,19 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "RunOnceActivity.cidr.known.project.marker": "true",
+-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+-    "cf.first.check.clang-format": "false",
+-    "cidr.known.project.marker": "true",
+-    "git-widget-placeholder": "main",
+-    "kotlin-language-version-configured": "true",
+-    "last_opened_file_path": "/opt/android/projects/DAM_UF1_Proyecto/UF1_Proyecto",
+-    "settings.editor.selected.configurable": "editor.preferences.import"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
++    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
++    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
++    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
++    &quot;last_opened_file_path&quot;: &quot;/opt/android/projects/DAM_UF1_Proyecto/UF1_Proyecto&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+Index: UF1_Proyecto/app/src/main/java/com/example/uf1_proyecto/HomeFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.uf1_proyecto\n\nimport android.os.Bundle\nimport androidx.fragment.app.Fragment\nimport android.view.LayoutInflater\nimport android.view.View\nimport android.view.ViewGroup\nimport android.widget.Toast\nimport androidx.recyclerview.widget.DividerItemDecoration\nimport androidx.recyclerview.widget.LinearLayoutManager\nimport com.example.uf1_proyecto.adapter.PeliculaAdapter\nimport com.example.uf1_proyecto.databinding.FragmentHomeBinding\n\n\nclass HomeFragment : Fragment() {\n\n    var _binding: FragmentHomeBinding? = null\n\n    val binding: FragmentHomeBinding get() = _binding!!\n    override fun onCreateView(\n        inflater: LayoutInflater, container: ViewGroup?,\n        savedInstanceState: Bundle?\n    ): View? {\n\n        _binding = FragmentHomeBinding.inflate(inflater, container, false)\n        val view = binding.root\n        // Inflate the layout for this fragment\n        initRecycleView()\n        return view\n\n        /*\n    * Está función se encargará de recuperar el recycle view del activity_main*/\n\n    }\n\n    fun initRecycleView() {\n\n        //val manager = GridLayoutManager)\n        val manager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)\n        /*Podemos añadir separadores*/\n        val decoration = DividerItemDecoration(requireContext(), manager.orientation)\n\n        binding.recyclerPeliculas.layoutManager = manager\n        /*{onItemSelected(it)} = {pelicula -> onItemSelected(pelicula)} */\n        binding.recyclerPeliculas.adapter =\n            PeliculaAdapter(PeliculasProvider.peliculasLista, { onItemSelected(it) })\n\n        binding.recyclerPeliculas.addItemDecoration(decoration)\n    }\n\n    fun onItemSelected(pelicula: Pelicula) {\n        Toast.makeText(requireContext(), pelicula.titulo, Toast.LENGTH_SHORT).show()\n    }\n\n    override fun onDestroyView() {\n        super.onDestroyView()\n        _binding = null\n    }\n\n}
+===================================================================
+diff --git a/UF1_Proyecto/app/src/main/java/com/example/uf1_proyecto/HomeFragment.kt b/UF1_Proyecto/app/src/main/java/com/example/uf1_proyecto/HomeFragment.kt
+--- a/UF1_Proyecto/app/src/main/java/com/example/uf1_proyecto/HomeFragment.kt	(revision 3d763f6e0794553f6f4677b271e2115a8161b818)
++++ b/UF1_Proyecto/app/src/main/java/com/example/uf1_proyecto/HomeFragment.kt	(date 1732708834062)
+@@ -6,6 +6,7 @@
+ import android.view.View
+ import android.view.ViewGroup
+ import android.widget.Toast
++import androidx.lifecycle.ViewModel
+ import androidx.recyclerview.widget.DividerItemDecoration
+ import androidx.recyclerview.widget.LinearLayoutManager
+ import com.example.uf1_proyecto.adapter.PeliculaAdapter
+@@ -17,6 +18,9 @@
+     var _binding: FragmentHomeBinding? = null
+ 
+     val binding: FragmentHomeBinding get() = _binding!!
++
++
++
+     override fun onCreateView(
+         inflater: LayoutInflater, container: ViewGroup?,
+         savedInstanceState: Bundle?
+@@ -26,6 +30,7 @@
+         val view = binding.root
+         // Inflate the layout for this fragment
+         initRecycleView()
++
+         return view
+ 
+         /*

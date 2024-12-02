@@ -35,7 +35,7 @@
                 android:icon="@drawable/ajustes_icon"
                 android:title="@string/settings"
                 app:showAsAction="ifRoom"/>
-            <item android:id="@+id/loginFragment"
+            <item android:id="@+id/logout"
                 android:icon="@android:drawable/ic_menu_close_clear_cancel"
                 android:title="@string/logOut"
                 app:showAsAction="ifRoom"/>
