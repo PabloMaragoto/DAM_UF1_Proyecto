@@ -1,4 +1,4 @@
-package com.example.pruebapeliculasapp.views
+package com.example.uf1_proyecto.adapters
 
 
 import android.content.Context
@@ -14,18 +14,17 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+
 import com.example.uf1_proyecto.R
 import com.example.uf1_proyecto.core.Constants
 import com.example.uf1_proyecto.models.PeliculaModel
+import com.example.uf1_proyecto.views.HomeFragmentDirections
 
 
 class AdapterPelicula(
     //Contexto de la alicación que nos permite saber de donde vienen todas las peticiones
     val context: Context,
-
-
     var peliculasList: List<PeliculaModel>
-
 
 ) : RecyclerView.Adapter<AdapterPelicula.ViewHolder>() {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -59,7 +58,11 @@ class AdapterPelicula(
                                 HtmlCompat.FROM_HTML_MODE_LEGACY)
 
         holder.cvPelicula.setOnClickListener{ view ->
-            val action = HomeFragmentDirections.actionHomeFragmentToPeliculaInfoFragment(pelicula.title, pelicula.sinopsis, pelicula.caratula)
+           val action = HomeFragmentDirections.actionHomeFragmentToPeliculaInfoFragment(
+               pelicula.title,
+               pelicula.sinopsis,
+               pelicula.caratula
+           )
             view.findNavController().navigate(action)//showSinopsis(pelicula.title, pelicula.sinopsis)
         }
     }

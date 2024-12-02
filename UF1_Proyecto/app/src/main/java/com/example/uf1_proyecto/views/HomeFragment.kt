@@ -1,4 +1,4 @@
-package com.example.pruebapeliculasapp.views
+package com.example.uf1_proyecto.views
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.uf1_proyecto.adapters.AdapterPelicula
 import com.example.uf1_proyecto.databinding.FragmentHomeBinding
 import com.example.uf1_proyecto.viewmodels.PeliculasViewModel
 

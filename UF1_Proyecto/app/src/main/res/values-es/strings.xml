@@ -12,5 +12,12 @@
     <string name="chats">Chats</string>
     <string name="settings">Ajustes</string>
     <string name="lorem"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lobortis mollis vestibulum. Sed sed aliquet lectus. Duis vel ornare purus, eu sollicitudin massa. Nunc vitae massa mauris. Morbi elementum ac urna nec posuere. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed molestie elementum dolor tincidunt porta. Aliquam erat volutpat. </string>
+    <string name="login">Iniciar sesión</string>
+    <string name="signUp">Darse de alta</string>
+    <string name="email">Correo electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="errorSignUp">Ha ocurrido un error al intentar darse de alta</string>
+    <string name="errorLogIn">Ha ocurrido un error al intentar iniciar sesión</string>
+    <string name="logOut">Cerrar Sesión</string>
 
 </resources>

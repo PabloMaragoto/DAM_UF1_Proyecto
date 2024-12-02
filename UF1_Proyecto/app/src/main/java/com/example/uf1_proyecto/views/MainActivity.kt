@@ -29,24 +29,7 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        val toolbar = binding.toolbar
-        setSupportActionBar(toolbar)
 
-        val drawerLayout = binding.drawerLayout
-
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment_container_view) as NavHostFragment
-        val navController = navHostFragment.navController
-        val builder = AppBarConfiguration.Builder(navController.graph)
-
-        val bottombar = binding.bottomNavigation
-        bottombar.setupWithNavController(navController)
-
-        builder.setOpenableLayout(drawerLayout)
-        val appBarConfiguration = builder.build()
-        toolbar.setupWithNavController(navController, appBarConfiguration)
-
-        val navigationView = binding.navView
-        navigationView.setupWithNavController(navController)
 
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
@@ -57,13 +40,13 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    /*override fun onOptionsItemSelected(item: MenuItem): Boolean {
         //Recuperamos el controlador de navegación
         val navController = findNavController(R.id.fragment_container_view)
         //Y lo vinculamos con los items del menú
         NavigationUI.onNavDestinationSelected(item, navController)
         return super.onOptionsItemSelected(item)
-    }
+    }*/
 
 
 

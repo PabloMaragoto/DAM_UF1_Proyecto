@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.pruebapeliculasapp.views.HomeFragment"
+        android:name="com.example.uf1_proyecto.views.HomeFragment"
         android:label="HomeFragment" >
         <action
             android:id="@+id/action_homeFragment_to_peliculaInfoFragment"
@@ -52,7 +52,11 @@
         android:id="@+id/chatsFragment"
         android:name="com.example.uf1_proyecto.views.ChatsFragment"
         android:label="fragment_chats"
-        tools:layout="@layout/fragment_chats" />
+        tools:layout="@layout/fragment_chats" >
+        <action
+            android:id="@+id/action_chatsFragment_to_chatPrivadoFragment"
+            app:destination="@id/chatPrivadoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/misPeliculasFragment"
         android:name="com.example.uf1_proyecto.views.MisPeliculasFragment"
@@ -68,4 +72,25 @@
         android:name="com.example.uf1_proyecto.views.AjustesFragment"
         android:label="fragment_ajustes"
         tools:layout="@layout/fragment_ajustes" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.uf1_proyecto.views.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+
+    </fragment>
+    <fragment
+        android:id="@+id/chatPrivadoFragment"
+        android:name="com.example.uf1_proyecto.views.ChatPrivadoFragment"
+        android:label="fragment_chat_privado"
+        tools:layout="@layout/fragment_chat_privado" >
+        <argument
+            android:name="username"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="uid"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
 </navigation>

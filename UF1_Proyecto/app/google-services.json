@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "822619318550",
+    "project_id": "mispeliculasapp",
+    "storage_bucket": "mispeliculasapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:822619318550:android:998f02a18468193a848837",
+        "android_client_info": {
+          "package_name": "com.example.uf1_proyecto"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBb7xfij-giWyDSAjUcfIj_ybbJxcBwn3w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
