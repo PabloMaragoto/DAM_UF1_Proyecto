@@ -31,13 +31,19 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="550dp"
+            android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="@string/list"
             android:background="@color/blue"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="20sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerPeliculasPopular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp" />
 
     </LinearLayout>
 </ScrollView>

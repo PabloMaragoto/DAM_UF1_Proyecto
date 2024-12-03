@@ -15,6 +15,15 @@ class PeliculasViewModel : ViewModel() {
     private var peliculaList = MutableLiveData<List<PeliculaModel>>()
     val peliculasList: LiveData<List<PeliculaModel>> = peliculaList
 
+    private var peliculaListPopular = MutableLiveData<List<PeliculaModel>>()
+    val peliculasListPopular: LiveData<List<PeliculaModel>> = peliculaListPopular
+
+    private var peliculaListTopRated = MutableLiveData<List<PeliculaModel>>()
+    val peliculasListTopRated: LiveData<List<PeliculaModel>> = peliculaListTopRated
+
+    private var peliculaListUpcoming = MutableLiveData<List<PeliculaModel>>()
+    val peliculasListUpcoming: LiveData<List<PeliculaModel>> = peliculaListUpcoming
+
     fun getNowPlaying() {
         viewModelScope.launch(Dispatchers.IO){
             val response = RetrofitClient.webService.getNowPlaying(Constants.API_KEY)
@@ -28,7 +37,7 @@ class PeliculasViewModel : ViewModel() {
         viewModelScope.launch(Dispatchers.IO){
             val response = RetrofitClient.webService.getPopular(Constants.API_KEY)
             withContext(Dispatchers.Main){
-                peliculaList.value = response.body()!!.results.sortedByDescending {(it.popularidad).toFloat()}
+                peliculaListPopular.value = response.body()!!.results.sortedByDescending {(it.popularidad).toFloat()}
             }
         }
     }
@@ -37,7 +46,7 @@ class PeliculasViewModel : ViewModel() {
         viewModelScope.launch(Dispatchers.IO){
             val response = RetrofitClient.webService.getTopRated(Constants.API_KEY)
             withContext(Dispatchers.Main){
-                peliculaList.value = response.body()!!.results.sortedByDescending {(it.puntuacion).toFloat()}
+                peliculaListTopRated.value = response.body()!!.results.sortedByDescending {(it.puntuacion).toFloat()}
             }
         }
     }
@@ -46,7 +55,7 @@ class PeliculasViewModel : ViewModel() {
         viewModelScope.launch(Dispatchers.IO){
             val response = RetrofitClient.webService.getUpcoming(Constants.API_KEY)
             withContext(Dispatchers.Main){
-                peliculaList.value = response.body()!!.results.sortedBy {it.title}
+                peliculaListUpcoming.value = response.body()!!.results.sortedBy {it.title}
             }
         }
     }

@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dfd05b19-6bf2-4a86-9efb-0107b2941877" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UF1_Proyecto/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UF1_Proyecto/.idea/deploymentTargetSelector.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UF1_Proyecto/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UF1_Proyecto/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UF1_Proyecto/app/src/main/java/com/example/uf1_proyecto/adapters/AdapterMensaje.kt" beforeDir="false" afterPath="$PROJECT_DIR$/UF1_Proyecto/app/src/main/java/com/example/uf1_proyecto/adapters/AdapterMensaje.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UF1_Proyecto/app/src/main/java/com/example/uf1_proyecto/views/ContentFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/UF1_Proyecto/app/src/main/java/com/example/uf1_proyecto/views/ContentFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UF1_Proyecto/app/src/main/res/layout/item_mensaje_enviado.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UF1_Proyecto/app/src/main/res/layout/item_mensaje_enviado.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UF1_Proyecto/app/src/main/res/layout/item_mensaje_recibido.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UF1_Proyecto/app/src/main/res/layout/item_mensaje_recibido.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UF1_Proyecto/app/src/main/res/menu/menu_navside.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UF1_Proyecto/app/src/main/res/menu/menu_navside.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UF1_Proyecto/app/src/main/res/navigation/nav_graph_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UF1_Proyecto/app/src/main/res/navigation/nav_graph_login.xml" afterDir="false" />
-    </list>
+    <list default="true" id="dfd05b19-6bf2-4a86-9efb-0107b2941877" name="Changes" comment="Mejorado los chats, se ven los mensajes sin ocupar todo el espacio de la pantalla" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,6 +59,15 @@
       <option name="presentableId" value="Default" />
       <updated>1732103504650</updated>
     </task>
+    <task id="LOCAL-00001" summary="Mejorado los chats, se ven los mensajes sin ocupar todo el espacio de la pantalla">
+      <option name="closed" value="true" />
+      <created>1733140812323</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1733140812323</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -81,5 +80,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Mejorado los chats, se ven los mensajes sin ocupar todo el espacio de la pantalla" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mejorado los chats, se ven los mensajes sin ocupar todo el espacio de la pantalla" />
   </component>
 </project>

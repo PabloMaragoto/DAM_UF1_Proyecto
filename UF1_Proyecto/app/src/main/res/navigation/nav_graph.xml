@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_peliculaInfoFragment_to_caratulaPeliculaFragment"
             app:destination="@id/caratulaPeliculaFragment" />
+        <argument
+            android:name="idPelicula"
+            app:argType="string" />
 
 
     </fragment>

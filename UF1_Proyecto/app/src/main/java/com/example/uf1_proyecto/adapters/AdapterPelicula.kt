@@ -61,7 +61,8 @@ class AdapterPelicula(
            val action = HomeFragmentDirections.actionHomeFragmentToPeliculaInfoFragment(
                pelicula.title,
                pelicula.sinopsis,
-               pelicula.caratula
+               pelicula.caratula,
+               pelicula.id
            )
             view.findNavController().navigate(action)//showSinopsis(pelicula.title, pelicula.sinopsis)
         }

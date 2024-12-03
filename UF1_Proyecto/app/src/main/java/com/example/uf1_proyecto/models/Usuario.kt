@@ -5,7 +5,8 @@ class Usuario {
     var email: String? = null
     var uid: String? = null
 
-    constructor() // Constructor vacío requerido por Firebase
+    // Constructor vacío requerido por Firebase
+    constructor()
 
     constructor(name: String?, email: String?, uid: String?) {
         this.name = name

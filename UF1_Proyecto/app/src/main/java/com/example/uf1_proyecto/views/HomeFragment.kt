@@ -22,6 +22,8 @@ class HomeFragment : Fragment() {
 
     private lateinit var adapterPelicula: AdapterPelicula
 
+    private lateinit var adapterPeliculaPopular: AdapterPelicula
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,14 +37,19 @@ class HomeFragment : Fragment() {
         viewModel = ViewModelProvider(this)[PeliculasViewModel::class.java]
         viewModel.getNowPlaying()
 
-        /*viewModel.getParasite()*/
-
         viewModel.peliculasList.observe(viewLifecycleOwner){
             adapterPelicula.peliculasList = it
             adapterPelicula.notifyDataSetChanged()
         }
 
-        return view
+        viewModel.getPopular()
+
+        viewModel.peliculasListPopular.observe(viewLifecycleOwner){
+            adapterPeliculaPopular.peliculasList = it
+            adapterPelicula.notifyDataSetChanged()
+        }
+
+        return view //@
 
     }
     private fun setUpRecyclerView(){
@@ -53,6 +60,11 @@ class HomeFragment : Fragment() {
         binding.recyclerPeliculas.layoutManager = layoutManager
         adapterPelicula = AdapterPelicula(requireContext(), arrayListOf())
         binding.recyclerPeliculas.adapter = adapterPelicula
+
+        val layoutManagerPopular = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.recyclerPeliculasPopular.layoutManager = layoutManagerPopular
+        adapterPeliculaPopular = AdapterPelicula(requireContext(), arrayListOf())
+        binding.recyclerPeliculasPopular.adapter = adapterPeliculaPopular
     }
 
     override fun onDestroyView() {
