@@ -62,10 +62,18 @@ class ContentFragment : Fragment() {
         val navigationView = binding.navView
         navigationView.setupWithNavController(navController)
 
+        val currentUser = mAuth.currentUser
+
+        if(currentUser == null){
+            bottombar.visibility = View.GONE
+        }else{
+            bottombar.visibility = View.VISIBLE
+        }
+
         return view
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    /*override fun onOptionsItemSelected(item: MenuItem): Boolean {
         Log.d("Logout", "onOptionsItemSelected llamado")
         val navController = findNavController()
 
@@ -97,9 +105,11 @@ class ContentFragment : Fragment() {
         }
 
         return super.onOptionsItemSelected(item)
+    }*/
+
+    fun setVisibilityBar(){
+        binding.bottomNavigation.visibility = View.GONE
     }
-
-
 
     override fun onDestroyView() {
         super.onDestroyView()
