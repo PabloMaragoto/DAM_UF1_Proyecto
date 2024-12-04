@@ -71,10 +71,7 @@ class ChatPrivadoFragment : Fragment() {
             }
 
             cajaMensaje.setText("")
-
         }
-
-
         return view
     }
 

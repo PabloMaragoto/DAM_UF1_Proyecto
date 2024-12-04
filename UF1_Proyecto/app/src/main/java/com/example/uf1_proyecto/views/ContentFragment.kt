@@ -66,32 +66,28 @@ class ContentFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        Log.d("Logout", "onOptionsItemSelected llamado") // Log adicional
+        Log.d("Logout", "onOptionsItemSelected llamado")
         val navController = findNavController()
 
-        Log.d("Logout", "Item seleccionado: ${item.itemId}") // Log adicional
+        Log.d("Logout", "Item seleccionado: ${item.itemId}")
 
         if (item.itemId == R.id.logoutFragment) {
-            Log.d("Logout", "Opción de logout seleccionada") // Log adicional
+            Log.d("Logout", "Opción de logout seleccionada")
 
             // Cerrar sesión
             mAuth.signOut()
-            Log.d("Logout", "mAuth.signOut() llamado") // Log adicional
+            Log.d("Logout", "mAuth.signOut() llamado")
 
-            // Verificar si la sesión se cerró correctamente
             val currentUser = mAuth.currentUser
-            Log.d("Logout", "Usuario actual después de signOut: $currentUser") // Log adicional
+            Log.d("Logout", "Usuario actual después de signOut: $currentUser")
 
             if (currentUser == null) {
                 Log.d("Logout", "Sesión cerrada con éxito")
 
-                // Aquí navegamos al LogoutFragment para mostrar el mensaje de despedida
                 navController.navigate(R.id.logoutFragment)
 
-                // Cambiar al gráfico de navegación del login
                 navController.setGraph(R.navigation.nav_graph_login)
 
-                // Navegar al loginFragment
                 navController.navigate(R.id.loginFragment)
             } else {
                 Log.d("Logout", "No se pudo cerrar sesión")

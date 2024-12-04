@@ -10,6 +10,7 @@ import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.uf1_proyecto.core.Constants
+import com.example.uf1_proyecto.dao.ResenhaDao
 import com.example.uf1_proyecto.databinding.FragmentPeliculaInfoBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -24,6 +25,8 @@ class PeliculaInfoFragment : Fragment() {
 
     private lateinit var mDbRef: DatabaseReference
 
+    private lateinit var resenhaDao : ResenhaDao
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,6 +34,8 @@ class PeliculaInfoFragment : Fragment() {
     ): View? {
         _binding = FragmentPeliculaInfoBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        resenhaDao = ResenhaDao(requireContext())
 
         mDbRef = FirebaseDatabase.getInstance("https://mispeliculasapp-default-rtdb.europe-west1.firebasedatabase.app/").getReference()
         val currentUid = FirebaseAuth.getInstance().currentUser?.uid
@@ -59,23 +64,10 @@ class PeliculaInfoFragment : Fragment() {
         }
 
         if (currentUid != null) {
-            mDbRef.child("reviews")
-                .child(currentUid)
-                .child(id)
-                .get()
-                .addOnSuccessListener { snapshot ->
-                    if (snapshot.exists()) {
-                        val textoGuardado = snapshot.child("textoGuardado").getValue(String::class.java)
-                        if (textoGuardado != null) {
-                            binding.etReview.setText(textoGuardado)
-                        } else {
-                            binding.etReview.setText("No hay texto disponible")
-                        }
-                    }
-                }
-                .addOnFailureListener {
-                    Toast.makeText(context, "Error al cargar el texto", Toast.LENGTH_SHORT).show()
-                }
+            resenhaDao.getReview(currentUid, id, binding.etReview, onSuccess = { review -> // Handle success case if needed
+            },
+                onFailure = { exception ->
+                    Toast.makeText(context, "Error al cargar la reseña", Toast.LENGTH_SHORT).show() })
         } else {//
             Toast.makeText(context, "Usuario no autenticado", Toast.LENGTH_SHORT).show()
         }
@@ -83,16 +75,14 @@ class PeliculaInfoFragment : Fragment() {
         val btnSend = binding.btnSend
 
         btnSend.setOnClickListener {
-            val texto = binding.etReview.text.toString()  // Obtener el texto del TextView
 
-            val datosTexto = mapOf("textoGuardado" to texto)
-
-            mDbRef.child("reviews").child(currentUid.toString()).child(id).setValue(datosTexto).addOnSuccessListener {
-                // Acción cuando se guarda exitosamente
-                Toast.makeText(context, "Texto guardado", Toast.LENGTH_SHORT).show()
-            }.addOnFailureListener {
-                // Acción en caso de error
-                Toast.makeText(context, "Error al guardar el texto", Toast.LENGTH_SHORT).show()
+            if (currentUid != null) {
+                resenhaDao.saveReview(currentUid, id, binding.etReview, onSuccess = { review -> // Handle success case if needed
+                },
+                    onFailure = { exception ->
+                        Toast.makeText(context, "Error al guardar la reseña", Toast.LENGTH_SHORT).show() })
+            } else {//
+                Toast.makeText(context, "Usuario no autenticado", Toast.LENGTH_SHORT).show()
             }
         }
 
