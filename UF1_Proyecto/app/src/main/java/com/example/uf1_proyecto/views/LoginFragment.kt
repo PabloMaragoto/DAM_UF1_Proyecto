@@ -44,9 +44,6 @@ class LoginFragment : Fragment() {
         btnSignUp = binding.btnSignUp
 
 
-
-
-
         btnSignUp.setOnClickListener{
             val navController = view.findNavController()
             val action = LoginFragmentDirections.actionLoginFragmentToSignUpFragment()
@@ -58,8 +55,6 @@ class LoginFragment : Fragment() {
             val password = edtPassword.text.toString()
 
             login(email, password)
-
-
         }
 
         return view
@@ -81,6 +76,4 @@ class LoginFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
-
 }

@@ -66,27 +66,44 @@ class ContentFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        Log.d("Logout", "onOptionsItemSelected llamado") // Log adicional
         val navController = findNavController()
 
-        if (item.itemId == R.id.logout) {
-            mAuth.signOut()
+        Log.d("Logout", "Item seleccionado: ${item.itemId}") // Log adicional
 
-            if (mAuth.currentUser == null) {
+        if (item.itemId == R.id.logoutFragment) {
+            Log.d("Logout", "Opción de logout seleccionada") // Log adicional
+
+            // Cerrar sesión
+            mAuth.signOut()
+            Log.d("Logout", "mAuth.signOut() llamado") // Log adicional
+
+            // Verificar si la sesión se cerró correctamente
+            val currentUser = mAuth.currentUser
+            Log.d("Logout", "Usuario actual después de signOut: $currentUser") // Log adicional
+
+            if (currentUser == null) {
                 Log.d("Logout", "Sesión cerrada con éxito")
+
+                // Aquí navegamos al LogoutFragment para mostrar el mensaje de despedida
+                navController.navigate(R.id.logoutFragment)
+
+                // Cambiar al gráfico de navegación del login
+                navController.setGraph(R.navigation.nav_graph_login)
+
+                // Navegar al loginFragment
+                navController.navigate(R.id.loginFragment)
             } else {
                 Log.d("Logout", "No se pudo cerrar sesión")
             }
 
-            navController.setGraph(R.navigation.nav_graph_login)
-
-            navController.navigate(R.id.loginFragment)
-
             return true
         }
 
-        // No usar  onNavDestinationSelected para logout, ya que no es un destino
         return super.onOptionsItemSelected(item)
     }
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()
