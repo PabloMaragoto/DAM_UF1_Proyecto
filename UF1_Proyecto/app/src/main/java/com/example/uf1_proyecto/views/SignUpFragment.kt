@@ -77,7 +77,6 @@ class SignUpFragment : Fragment() {
 
         mDbRef = FirebaseDatabase.getInstance("https://mispeliculasapp-default-rtdb.europe-west1.firebasedatabase.app/").getReference("usuarios")
 
-
         mDbRef.child(uid).setValue(Usuario(username, email, uid))
             .addOnSuccessListener {
                 Log.d("SignUp", "Usuario agregado con UID: $uid")

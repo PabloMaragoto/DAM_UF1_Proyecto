@@ -60,7 +60,8 @@
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edt_email" />
+        app:layout_constraintTop_toBottomOf="@id/edt_email"
+        android:inputType="textPassword"/>
 
 
     <Button

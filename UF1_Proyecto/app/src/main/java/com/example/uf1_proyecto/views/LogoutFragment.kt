@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import com.example.uf1_proyecto.R
 import com.example.uf1_proyecto.databinding.FragmentLogoutBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -22,25 +24,25 @@ class LogoutFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         _binding = FragmentLogoutBinding.inflate(inflater,container,false)
         val view = binding.root
         mAuth = FirebaseAuth.getInstance()
 
         mAuth.signOut()
-        Log.d("Logout", "mAuth.signOut() llamado") // Log adicional
+        Log.d("Logout", "mAuth.signOut() llamado")
 
-        // Verificar si la sesión se cerró correctamente
         val currentUser = mAuth.currentUser
-        Log.d("Logout", "Usuario actual después de signOut: $currentUser") // Log adicional
+        Log.d("Logout", "Usuario actual después de signOut: $currentUser")
 
         if (currentUser == null) {
-            Log.d("Logout", "Sesión cerrada con éxito")
-
-
+            Log.d("Logout", "Successfully logged out")
+            val parentFragment = parentFragmentManager.findFragmentById(R.id.contentFragment)
+            //parentFragment?.setV()
+            findNavController().navigate(R.id.action_logoutFragment_to_nav_graph_login)
         } else {
-            Log.d("Logout", "No se pudo cerrar sesión")
+            Log.d("Logout", "Logout failed")
         }
+
         return view
     }
 

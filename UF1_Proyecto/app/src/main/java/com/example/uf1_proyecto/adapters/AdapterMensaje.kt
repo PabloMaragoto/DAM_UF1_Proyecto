@@ -21,7 +21,6 @@ class AdapterMensaje(
 
     class EnviadoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val mensajeEnviado = itemView.findViewById<TextView>(R.id.txt_mensaje_enviado)
-
     }
 
     class RecibidoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
