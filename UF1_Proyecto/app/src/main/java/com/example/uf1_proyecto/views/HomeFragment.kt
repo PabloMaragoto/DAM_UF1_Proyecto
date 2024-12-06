@@ -5,12 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.uf1_proyecto.adapters.AdapterPelicula
 import com.example.uf1_proyecto.databinding.FragmentHomeBinding
 import com.example.uf1_proyecto.viewmodels.PeliculasViewModel
+import com.example.uf1_proyecto.viewmodels.SharedViewModel
 
 class HomeFragment : Fragment() {
 
@@ -19,6 +21,8 @@ class HomeFragment : Fragment() {
     val binding: FragmentHomeBinding get() = _binding!!
 
     private lateinit var viewModel: PeliculasViewModel
+
+    private val sharedViewModel: SharedViewModel by activityViewModels()
 
     private lateinit var adapterPelicula: AdapterPelicula
 
@@ -33,6 +37,8 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
         setUpRecyclerView()
+
+        sharedViewModel.setBottomBarVisibility(true)
 
         viewModel = ViewModelProvider(this)[PeliculasViewModel::class.java]
         viewModel.getNowPlaying()

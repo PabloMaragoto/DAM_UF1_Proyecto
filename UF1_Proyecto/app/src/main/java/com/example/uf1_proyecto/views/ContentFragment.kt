@@ -42,7 +42,7 @@ class ContentFragment : Fragment() {
         (activity as? AppCompatActivity)?.setSupportActionBar(toolbar)
 
         // Setup NavController
-        val navHostFragment = childFragmentManager.findFragmentById(R.id.fragment_container_view) as NavHostFragment
+        val navHostFragment = childFragmentManager.findFragmentById(R.id.fragment_container_view_content) as NavHostFragment
         val navController = navHostFragment.navController
 
         // Setup AppBarConfiguration
@@ -55,8 +55,8 @@ class ContentFragment : Fragment() {
         toolbar.setupWithNavController(navController, appBarConfiguration)
 
         // Setup BottomNavigationView
-        val bottombar = binding.bottomNavigation
-        bottombar.setupWithNavController(navController)
+        //val bottombar = binding.bottomNavigation
+        //bottombar.setupWithNavController(navController)
 
         // Setup NavigationView
         val navigationView = binding.navView
@@ -64,11 +64,11 @@ class ContentFragment : Fragment() {
 
         val currentUser = mAuth.currentUser
 
-        if(currentUser == null){
+       /* if(currentUser == null){
             bottombar.visibility = View.GONE
         }else{
             bottombar.visibility = View.VISIBLE
-        }
+        }*/
 
         return view
     }
@@ -107,9 +107,9 @@ class ContentFragment : Fragment() {
         return super.onOptionsItemSelected(item)
     }*/
 
-    fun setVisibilityBar(){
+    /*fun setVisibilityBar(){
         binding.bottomNavigation.visibility = View.GONE
-    }
+    }*/
 
     override fun onDestroyView() {
         super.onDestroyView()

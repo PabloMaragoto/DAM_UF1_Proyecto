@@ -6,10 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.example.uf1_proyecto.R
 import com.example.uf1_proyecto.databinding.FragmentLogoutBinding
+import com.example.uf1_proyecto.viewmodels.SharedViewModel
 import com.google.firebase.auth.FirebaseAuth
 
 
@@ -17,6 +20,8 @@ class LogoutFragment : Fragment() {
 
     var _binding : FragmentLogoutBinding? = null
     val binding: FragmentLogoutBinding get() = _binding!!
+
+    private val sharedViewModel: SharedViewModel by activityViewModels()
 
     private lateinit var mAuth: FirebaseAuth
 
@@ -26,6 +31,9 @@ class LogoutFragment : Fragment() {
     ): View? {
         _binding = FragmentLogoutBinding.inflate(inflater,container,false)
         val view = binding.root
+
+        sharedViewModel.setBottomBarVisibility(false)
+
         mAuth = FirebaseAuth.getInstance()
 
         mAuth.signOut()
