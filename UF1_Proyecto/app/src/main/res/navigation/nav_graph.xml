@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -91,19 +91,44 @@
             app:nullable="true" />
     </fragment>
 
-    <include app:graph="@navigation/nav_graph_login"/>
+
 
     <fragment
         android:id="@+id/logoutFragment"
         android:name="com.example.uf1_proyecto.views.LogoutFragment"
         android:label="fragment_logout"
         tools:layout="@layout/fragment_logout" >
-    <action
-        android:id="@+id/action_logoutFragment_to_nav_graph_login"
-        app:destination="@+id/nav_graph_login" />
+        <action
+            android:id="@+id/action_logoutFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cinesCercanosFragment"
+        android:name="com.example.uf1_proyecto.views.CinesCercanosFragment"
+        android:label="fragment_cines_cercanos"
+        tools:layout="@layout/fragment_cines_cercanos" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.uf1_proyecto.views.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_contentFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 
-
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.uf1_proyecto.views.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_contentFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 
 
 </navigation>

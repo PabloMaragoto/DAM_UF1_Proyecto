@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
@@ -32,7 +33,7 @@ class LogoutFragment : Fragment() {
         _binding = FragmentLogoutBinding.inflate(inflater,container,false)
         val view = binding.root
 
-        sharedViewModel.setBottomBarVisibility(false)
+        sharedViewModel.setBarVisibility(false)
 
         mAuth = FirebaseAuth.getInstance()
 
@@ -44,15 +45,16 @@ class LogoutFragment : Fragment() {
 
         if (currentUser == null) {
             Log.d("Logout", "Successfully logged out")
-            val parentFragment = parentFragmentManager.findFragmentById(R.id.contentFragment)
+            val parentFragment = parentFragmentManager.findFragmentById(R.id.fragment_container_view)
             //parentFragment?.setV()
-            findNavController().navigate(R.id.action_logoutFragment_to_nav_graph_login)
+            findNavController().navigate(R.id.action_logoutFragment_to_loginFragment)
         } else {
             Log.d("Logout", "Logout failed")
         }
 
         return view
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

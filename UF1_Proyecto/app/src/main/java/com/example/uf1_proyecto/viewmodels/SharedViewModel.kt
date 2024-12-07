@@ -6,14 +6,16 @@ import androidx.lifecycle.ViewModel
 
 class SharedViewModel : ViewModel() {
 
-    private val _bottomBarVisible = MutableLiveData<Boolean>()
-    val bottomBarVisible: LiveData<Boolean> get() = _bottomBarVisible
+    private val _BarVisible = MutableLiveData<Boolean>()
+    val BarVisible: LiveData<Boolean> get() = _BarVisible
+
+
 
     init {
-        _bottomBarVisible.value = false
+        _BarVisible.value = false
     }
 
-    fun setBottomBarVisibility(isVisible: Boolean) {
-        _bottomBarVisible.value = isVisible
+    fun setBarVisibility(isVisible: Boolean) {
+        _BarVisible.value = isVisible
     }
 }

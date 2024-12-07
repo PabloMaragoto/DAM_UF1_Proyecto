@@ -23,14 +23,14 @@ android:layout_height="match_parent">
         android:layout_height="?attr/actionBarSize"
         android:background="@color/white" />
 
-    <androidx.fragment.app.FragmentContainerView
+    <!--androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_container_view_content"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         app:defaultNavHost="true"
-        app:navGraph="@navigation/nav_graph" />
+        app:navGraph="@navigation/nav_graph" /-->
 
     <!--<com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

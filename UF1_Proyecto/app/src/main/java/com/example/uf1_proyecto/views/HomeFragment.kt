@@ -38,7 +38,16 @@ class HomeFragment : Fragment() {
         val view = binding.root
         setUpRecyclerView()
 
-        sharedViewModel.setBottomBarVisibility(true)
+        sharedViewModel.setBarVisibility(true)
+
+
+
+
+
+
+
+
+
 
         viewModel = ViewModelProvider(this)[PeliculasViewModel::class.java]
         viewModel.getNowPlaying()

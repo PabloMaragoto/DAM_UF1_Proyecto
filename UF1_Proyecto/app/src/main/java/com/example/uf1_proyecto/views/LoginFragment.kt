@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavDirections
+import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.uf1_proyecto.R
@@ -64,13 +66,19 @@ class LoginFragment : Fragment() {
         mAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
-                    val action = LoginFragmentDirections.actionLoginFragmentToContentFragment()
-                    binding.root.findNavController().navigate(action)
+                    val navController = binding.root.findNavController()
+                    val navOptions = NavOptions.Builder()
+                        .setPopUpTo(R.id.loginFragment, true)
+                        .build()
+                    navController.navigate(R.id.action_loginFragment_to_contentFragment, null, navOptions)
                 } else {
                     Toast.makeText(requireContext(), getString(R.string.errorLogIn), Toast.LENGTH_SHORT).show()
                 }
             }
     }
+
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()

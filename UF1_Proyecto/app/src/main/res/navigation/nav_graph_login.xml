@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph_login"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/loginFragment">
-    <fragment
+    >
+<!-- app:startDestination="@id/loginFragment"   <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.uf1_proyecto.views.LoginFragment"
         android:label="fragment_login"
@@ -34,5 +34,5 @@
             android:id="@+id/action_contentFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
-
+-->
 </navigation>
