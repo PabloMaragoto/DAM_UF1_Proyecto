@@ -3,13 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.LogoutFragment">
+    tools:context=".views.LogoutFragment"
+    android:background="@color/blue">
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="bye bye"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:text="@string/loggingOut"
         android:layout_gravity="center_horizontal|center_vertical"/>
 
 </FrameLayout>

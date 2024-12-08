@@ -50,14 +50,9 @@ class ContentFragment : Fragment() {
         // Configura el Toolbar con el NavController y AppBarConfiguration
         toolbar.setupWithNavController(navController, appBarConfiguration)
 
-        // Setup BottomNavigationView
-        //val bottombar = binding.bottomNavigation
-        //bottombar.setupWithNavController(navController)
-
         // Setup NavigationView
         val navigationView = binding.navView
         navigationView.setupWithNavController(navController)
-
 
         return view
     }
@@ -65,7 +60,6 @@ class ContentFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-
         _binding = null
     }
 }

@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.uf1_proyecto.R
 import com.example.uf1_proyecto.core.Constants
 import com.example.uf1_proyecto.dao.ResenhaDao
 import com.example.uf1_proyecto.databinding.FragmentPeliculaInfoBinding
@@ -54,9 +55,9 @@ class PeliculaInfoFragment : Fragment() {
             .apply(RequestOptions().override(450, 330))
             .into(binding.caratulaPelicula)
 
-        // Aquí puedes configurar tu UI con los valores recuperados
         binding.txtTituloInfoPelicula.text = titulo
         binding.txtSinopsisInfoPelicula.text = sinopsis
+        val barraValoracion = binding.barraValoracion
 
         binding.caratulaPelicula.setOnClickListener{
             val action = PeliculaInfoFragmentDirections.actionPeliculaInfoFragmentToCaratulaPeliculaFragment(caratula)
@@ -64,12 +65,12 @@ class PeliculaInfoFragment : Fragment() {
         }
 
         if (currentUid != null) {
-            resenhaDao.getReview(currentUid, id, binding.etReview, onSuccess = { review -> // Handle success case if needed
+            resenhaDao.getReview(currentUid, id, binding.etReview, barraValoracion, onSuccess = { review ->
             },
                 onFailure = { exception ->
-                    Toast.makeText(context, "Error al cargar la reseña", Toast.LENGTH_SHORT).show() })
+                    Toast.makeText(context, R.string.errorLoadReview, Toast.LENGTH_SHORT).show() })
         } else {//
-            Toast.makeText(context, "Usuario no autenticado", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, R.string.userNotLogged, Toast.LENGTH_SHORT).show()
         }
 
         val btnSend = binding.btnSend
@@ -77,15 +78,14 @@ class PeliculaInfoFragment : Fragment() {
         btnSend.setOnClickListener {
 
             if (currentUid != null) {
-                resenhaDao.saveReview(currentUid, id, binding.etReview, onSuccess = { review -> // Handle success case if needed
+                resenhaDao.saveReview(currentUid, id, binding.etReview, barraValoracion, onSuccess = { review ->
                 },
                     onFailure = { exception ->
-                        Toast.makeText(context, "Error al guardar la reseña", Toast.LENGTH_SHORT).show() })
+                        Toast.makeText(context, R.string.errorSaveReview, Toast.LENGTH_SHORT).show() })
             } else {//
-                Toast.makeText(context, "Usuario no autenticado", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, R.string.userNotLogged, Toast.LENGTH_SHORT).show()
             }
         }
-
         return view
     }
 

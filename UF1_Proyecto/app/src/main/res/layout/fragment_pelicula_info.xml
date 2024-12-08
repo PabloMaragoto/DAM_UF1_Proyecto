@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.uf1_proyecto.views.PeliculaInfoFragment">
+    tools:context="com.example.uf1_proyecto.views.PeliculaInfoFragment"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,10 +23,11 @@
             android:text="@string/myMovies"
             android:background="@color/blue"
             android:textColor="@color/white"
+            android:justificationMode="inter_word"
             android:textStyle="bold"
             android:textSize="20sp"
             android:lineSpacingExtra="2dp"
-            android:justificationMode="inter_word"/>
+            android:textAlignment="center"/>
 
         <ImageView
             android:id="@+id/caratulaPelicula"
@@ -37,13 +40,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            android:text="Información"
+            android:text="@string/overview"
             android:background="@color/blue"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="20sp"
             android:textAlignment="center"/>
-
 
         <TextView
             android:id="@+id/txtSinopsisInfoPelicula"
@@ -51,16 +53,16 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="@string/lorem"
-            android:background="@color/blue"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="18sp"
-            android:textAlignment="center"/>
+            android:lineSpacingExtra="2dp"
+            android:justificationMode="inter_word"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            android:text="Calificación"
+            android:text="@string/rating"
             android:background="@color/blue"
             android:textColor="@color/white"
             android:textStyle="bold"
@@ -69,16 +71,17 @@
         
         <RatingBar
             android:id="@+id/barraValoracion"
-            android:layout_margin="25dp"
+            android:layout_margin="35dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:progressTint="@color/yellow"
             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            android:text="Reseña"
+            android:text="@string/review"
             android:background="@color/blue"
             android:textColor="@color/white"
             android:textStyle="bold"
@@ -88,13 +91,17 @@
         <EditText
             android:id="@+id/etReview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:textColor="@color/black"
+            android:padding="12dp"/>
 
         <Button
             android:id="@+id/btn_send"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Send"/>
+            android:layout_margin="12dp"
+            android:text="@string/send"/>
 
     </LinearLayout>
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

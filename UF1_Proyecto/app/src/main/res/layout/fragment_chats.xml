@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.ChatsFragment">
+    android:fillViewport="true"
+    app:layout_scrollFlags="scroll|enterAlways">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/usuariosRecyclerView"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/item_usuario"/>
+        tools:context=".views.ChatsFragment">
 
-</FrameLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/usuariosRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_usuario" />
+
+    </FrameLayout>
+</androidx.core.widget.NestedScrollView>

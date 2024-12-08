@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:text="Esto es un mensaje"
+            android:text="@string/thisIsAMessage"
             android:textColor="@color/white"
             android:padding="10dp"/>
 

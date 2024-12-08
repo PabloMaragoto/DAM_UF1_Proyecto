@@ -10,7 +10,6 @@ import com.example.uf1_proyecto.R
 
 class MisListasFragment : Fragment() {
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

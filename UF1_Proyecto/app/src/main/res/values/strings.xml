@@ -21,5 +21,21 @@
     <string name="errorSignUp">An error has occurred</string>
     <string name="errorLogIn">An error has occurred while try to logging in</string>
     <string name="logOut">Log Out</string>
+    <string name="writeAMessage">Write a message</string>
+    <string name="send">Send</string>
+    <string name="map">Map</string>
+    <string name="multicines">Multicines Compostela</string>
+    <string name="numax">Numax Cine</string>
+    <string name="loggingOut">Logging out</string>
+    <string name="overview">Overview</string>
+    <string name="rating">Rating</string>
+    <string name="review">Review</string>
+    <string name="thisIsAMessage">This is a message</string>
+    <string name="errorLoadReview">An error has occurred while try to load your review</string>
+    <string name="errorSaveReview">An error has occurred while try to save your review</string>
+    <string name="saveReview">Your review has been saved</string>
+    <string name="userNotLogged">User not logged</string>
+    <string name="nowPlaying">Now playing</string>
+    <string name="popular">Popular</string>
 
 </resources>

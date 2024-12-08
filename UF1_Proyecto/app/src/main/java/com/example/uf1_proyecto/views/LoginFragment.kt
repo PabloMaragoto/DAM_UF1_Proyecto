@@ -28,7 +28,7 @@ class LoginFragment : Fragment() {
     private lateinit var btnLogin: Button
     private lateinit var btnSignUp: Button
 
-    //Iniciamos la clase FirabaseAuth, que contiene los métodos que utiloizaremos para autenticar al usuario
+    //Iniciamos la clase FirabaseAuth, que contiene los métodos que utilizaremos para autenticar al usuario
     private lateinit var mAuth: FirebaseAuth
 
     override fun onCreateView(
@@ -76,9 +76,6 @@ class LoginFragment : Fragment() {
                 }
             }
     }
-
-
-
 
     override fun onDestroyView() {
         super.onDestroyView()

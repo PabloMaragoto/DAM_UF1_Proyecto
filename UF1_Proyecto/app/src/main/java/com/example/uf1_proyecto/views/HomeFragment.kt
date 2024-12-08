@@ -40,23 +40,7 @@ class HomeFragment : Fragment() {
 
         sharedViewModel.setBarVisibility(true)
 
-
-
-
-
-
-
-
-
-
         viewModel = ViewModelProvider(this)[PeliculasViewModel::class.java]
-        viewModel.getNowPlaying()
-
-        viewModel.peliculasList.observe(viewLifecycleOwner){
-            adapterPelicula.peliculasList = it
-            adapterPelicula.notifyDataSetChanged()
-        }
-
         viewModel.getPopular()
 
         viewModel.peliculasListPopular.observe(viewLifecycleOwner){
@@ -64,22 +48,32 @@ class HomeFragment : Fragment() {
             adapterPelicula.notifyDataSetChanged()
         }
 
-        return view //@
+        viewModel.getNowPlaying()
+
+        viewModel.peliculasList.observe(viewLifecycleOwner){
+            adapterPelicula.peliculasList = it
+            adapterPelicula.notifyDataSetChanged()
+        }
+
+        return view
 
     }
     private fun setUpRecyclerView(){
 
         val layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         /*Podemos añadir separadores*/
-        val decoration = DividerItemDecoration(requireContext(), layoutManager.orientation)
-        binding.recyclerPeliculas.layoutManager = layoutManager
-        adapterPelicula = AdapterPelicula(requireContext(), arrayListOf())
-        binding.recyclerPeliculas.adapter = adapterPelicula
 
         val layoutManagerPopular = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.recyclerPeliculasPopular.layoutManager = layoutManagerPopular
         adapterPeliculaPopular = AdapterPelicula(requireContext(), arrayListOf())
         binding.recyclerPeliculasPopular.adapter = adapterPeliculaPopular
+
+        val decoration = DividerItemDecoration(requireContext(), layoutManager.orientation)
+        binding.recyclerPeliculas.layoutManager = layoutManager
+        adapterPelicula = AdapterPelicula(requireContext(), arrayListOf())
+        binding.recyclerPeliculas.adapter = adapterPelicula
+
+
     }
 
     override fun onDestroyView() {

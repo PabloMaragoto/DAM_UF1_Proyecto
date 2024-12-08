@@ -20,7 +20,4 @@
         android:textStyle="bold"
         android:textSize="20sp"
         android:layout_marginStart="25dp"/>
-
-
-
 </LinearLayout>

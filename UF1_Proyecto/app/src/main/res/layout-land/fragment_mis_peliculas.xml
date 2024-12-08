@@ -24,97 +24,80 @@
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:columnCount="3"
-            android:layout_marginTop="10dp">
+            android:columnCount="5"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_vertical">
 
             <ImageView
                 android:layout_width="125dp"
                 android:layout_height="175dp"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:background="@color/black" />
 
             <ImageView
                 android:layout_width="125dp"
                 android:layout_height="175dp"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:background="@color/black" />
 
             <ImageView
                 android:layout_width="125dp"
                 android:layout_height="175dp"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:background="@color/black" />
 
             <ImageView
                 android:layout_width="125dp"
                 android:layout_height="175dp"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:background="@color/black" />
 
             <ImageView
                 android:layout_width="125dp"
                 android:layout_height="175dp"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:background="@color/black" />
 
             <ImageView
                 android:layout_width="125dp"
                 android:layout_height="175dp"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:background="@color/black" />
 
             <ImageView
                 android:layout_width="125dp"
                 android:layout_height="175dp"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:background="@color/black" />
 
             <ImageView
                 android:layout_width="125dp"
                 android:layout_height="175dp"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:background="@color/black" />
 
             <ImageView
                 android:layout_width="125dp"
                 android:layout_height="175dp"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:background="@color/black" />
 
             <ImageView
                 android:layout_width="125dp"
                 android:layout_height="175dp"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:background="@color/black" />
 
             <ImageView
                 android:layout_width="125dp"
                 android:layout_height="175dp"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:background="@color/black" />
 
             <ImageView
                 android:layout_width="125dp"
                 android:layout_height="175dp"
-                android:layout_margin="5dp"
-                android:background="@color/black" />
-
-            <ImageView
-                android:layout_width="125dp"
-                android:layout_height="175dp"
-                android:layout_margin="5dp"
-                android:background="@color/black" />
-
-            <ImageView
-                android:layout_width="125dp"
-                android:layout_height="175dp"
-                android:layout_margin="5dp"
-                android:background="@color/black" />
-
-            <ImageView
-                android:layout_width="125dp"
-                android:layout_height="175dp"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:background="@color/black" />
 
         </GridLayout>

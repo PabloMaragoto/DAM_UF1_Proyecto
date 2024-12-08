@@ -19,5 +19,21 @@
     <string name="errorSignUp">Ha ocurrido un error al intentar darse de alta</string>
     <string name="errorLogIn">Ha ocurrido un error al intentar iniciar sesión</string>
     <string name="logOut">Cerrar Sesión</string>
+    <string name="writeAMessage">Escribe un mensaje</string>
+    <string name="send">Enviar</string>
+    <string name="map">Mapa</string>
+    <string name="multicines">Multicines Compostela</string>
+    <string name="numax">Numax Cine</string>
+    <string name="loggingOut">Se ha cerrado sesión</string>
+    <string name="overview">Sinopsis</string>
+    <string name="rating">Calificación</string>
+    <string name="review">Reseña</string>
+    <string name="thisIsAMessage">Esto es un mensaje</string>
+    <string name="errorLoadReview">Error al cargar la reseña</string>
+    <string name="errorSaveReview">Error al guardar la reseña</string>
+    <string name="saveReview">Reseña guardada</string>
+    <string name="userNotLogged">Usuario no autenticado</string>
+    <string name="nowPlaying">En cines</string>
+    <string name="popular">Popular</string>
 
 </resources>

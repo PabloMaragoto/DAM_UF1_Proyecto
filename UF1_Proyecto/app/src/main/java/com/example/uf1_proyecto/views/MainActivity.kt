@@ -87,7 +87,6 @@ class MainActivity : AppCompatActivity() {
 
         val navController = navHostFragment.navController
 
-
         //Y lo vinculamos con los items del menú
         NavigationUI.onNavDestinationSelected(item, navController)
         return super.onOptionsItemSelected(item)

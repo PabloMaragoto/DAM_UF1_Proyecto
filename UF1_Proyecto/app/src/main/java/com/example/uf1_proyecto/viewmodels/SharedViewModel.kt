@@ -9,8 +9,6 @@ class SharedViewModel : ViewModel() {
     private val _BarVisible = MutableLiveData<Boolean>()
     val BarVisible: LiveData<Boolean> get() = _BarVisible
 
-
-
     init {
         _BarVisible.value = false
     }

@@ -38,15 +38,11 @@ class LogoutFragment : Fragment() {
         mAuth = FirebaseAuth.getInstance()
 
         mAuth.signOut()
-        Log.d("Logout", "mAuth.signOut() llamado")
 
         val currentUser = mAuth.currentUser
-        Log.d("Logout", "Usuario actual después de signOut: $currentUser")
 
         if (currentUser == null) {
-            Log.d("Logout", "Successfully logged out")
-            val parentFragment = parentFragmentManager.findFragmentById(R.id.fragment_container_view)
-            //parentFragment?.setV()
+
             findNavController().navigate(R.id.action_logoutFragment_to_loginFragment)
         } else {
             Log.d("Logout", "Logout failed")
