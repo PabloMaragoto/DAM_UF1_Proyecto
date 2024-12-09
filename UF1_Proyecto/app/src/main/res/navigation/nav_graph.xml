@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.uf1_proyecto.views.HomeFragment"
-        android:label="HomeFragment" >
+        android:label="" >
         <action
             android:id="@+id/action_homeFragment_to_peliculaInfoFragment"
             app:destination="@id/peliculaInfoFragment" />
@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/peliculaInfoFragment"
         android:name="com.example.uf1_proyecto.views.PeliculaInfoFragment"
-        android:label="PeliculaInfoFragment" >
+        android:label="" >
 
         <argument
             android:name="titulo"
@@ -40,7 +40,7 @@
     <fragment
         android:id="@+id/caratulaPeliculaFragment"
         android:name="com.example.uf1_proyecto.views.CaratulaPeliculaFragment"
-        android:label="fragment_caratula_pelicula"
+        android:label=""
         tools:layout="@layout/fragment_caratula_pelicula" >
         <argument
             android:name="caratula"
@@ -49,12 +49,12 @@
     <fragment
         android:id="@+id/usuarioFragment"
         android:name="com.example.uf1_proyecto.views.UsuarioFragment"
-        android:label="fragment_usuario"
+        android:label=""
         tools:layout="@layout/fragment_usuario" />
     <fragment
         android:id="@+id/chatsFragment"
         android:name="com.example.uf1_proyecto.views.ChatsFragment"
-        android:label="fragment_chats"
+        android:label=""
         tools:layout="@layout/fragment_chats" >
         <action
             android:id="@+id/action_chatsFragment_to_chatPrivadoFragment"
@@ -63,23 +63,23 @@
     <fragment
         android:id="@+id/misPeliculasFragment"
         android:name="com.example.uf1_proyecto.views.MisPeliculasFragment"
-        android:label="fragment_mis_peliculas"
+        android:label=""
         tools:layout="@layout/fragment_mis_peliculas" />
     <fragment
         android:id="@+id/misListasFragment"
         android:name="com.example.uf1_proyecto.views.MisListasFragment"
-        android:label="fragment_mis_listas"
+        android:label=""
         tools:layout="@layout/fragment_mis_listas" />
     <fragment
         android:id="@+id/ajustesFragment"
         android:name="com.example.uf1_proyecto.views.AjustesFragment"
-        android:label="fragment_ajustes"
+        android:label=""
         tools:layout="@layout/fragment_ajustes" />
 
     <fragment
         android:id="@+id/chatPrivadoFragment"
         android:name="com.example.uf1_proyecto.views.ChatPrivadoFragment"
-        android:label="fragment_chat_privado"
+        android:label=""
         tools:layout="@layout/fragment_chat_privado" >
         <argument
             android:name="username"
@@ -96,7 +96,7 @@
     <fragment
         android:id="@+id/logoutFragment"
         android:name="com.example.uf1_proyecto.views.LogoutFragment"
-        android:label="fragment_logout"
+        android:label=""
         tools:layout="@layout/fragment_logout" >
         <action
             android:id="@+id/action_logoutFragment_to_loginFragment"
@@ -105,12 +105,12 @@
     <fragment
         android:id="@+id/cinesCercanosFragment"
         android:name="com.example.uf1_proyecto.views.CinesCercanosFragment"
-        android:label="fragment_cines_cercanos"
+        android:label=""
         tools:layout="@layout/fragment_cines_cercanos" />
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.uf1_proyecto.views.LoginFragment"
-        android:label="fragment_login"
+        android:label=""
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_signUpFragment"
@@ -123,7 +123,7 @@
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.example.uf1_proyecto.views.SignUpFragment"
-        android:label="fragment_sign_up"
+        android:label=""
         tools:layout="@layout/fragment_sign_up" >
         <action
             android:id="@+id/action_signUpFragment_to_contentFragment"
