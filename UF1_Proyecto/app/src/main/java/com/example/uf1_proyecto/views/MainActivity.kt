@@ -18,6 +18,7 @@ import com.example.uf1_proyecto.R
 import com.example.uf1_proyecto.databinding.ActivityMainBinding
 import com.example.uf1_proyecto.viewmodels.PeliculasViewModel
 import com.example.uf1_proyecto.viewmodels.SharedViewModel
+import com.google.android.libraries.places.api.Places
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
+        Places.initialize(this, getString(R.string.google_maps_key))
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root

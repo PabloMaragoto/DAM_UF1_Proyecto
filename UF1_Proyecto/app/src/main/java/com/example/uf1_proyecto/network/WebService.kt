@@ -32,5 +32,7 @@ interface WebService {
         @Query("query") query: String
     ): Response<PeliculasResponse>
 
-
+    //TODO: REVISAR
+    //https://developers.google.com/maps/documentation/places/web-service/legacy/search-nearby?hl=es-419#keyword
+    //https://www.digitalocean.com/community/tutorials/google-places-api
 }
