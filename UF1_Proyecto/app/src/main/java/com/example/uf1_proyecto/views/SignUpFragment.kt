@@ -63,7 +63,6 @@ class SignUpFragment : Fragment() {
                 if (task.isSuccessful) {
                     addUserToDatabase(username, email, mAuth.currentUser?.uid!!)
 
-
                     val action = SignUpFragmentDirections.actionSignUpFragmentToContentFragment()
                     binding.root.findNavController().navigate(action)
                 } else {

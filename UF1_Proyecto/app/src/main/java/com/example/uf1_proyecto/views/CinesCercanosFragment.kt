@@ -13,7 +13,10 @@ import android.annotation.SuppressLint
 import android.os.Looper
 import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.lifecycle.ViewModelProvider
 import com.example.uf1_proyecto.R
+import com.example.uf1_proyecto.viewmodels.PlacesViewModel
+import com.example.uf1_proyecto.viewmodels.SharedViewModel
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.Granularity
 import com.google.android.gms.location.LocationCallback
@@ -49,6 +52,7 @@ class CinesCercanosFragment : Fragment(), OnMapReadyCallback {
     private lateinit var locationRequest: LocationRequest
     private lateinit var locationCallback: LocationCallback
     private lateinit var map: GoogleMap
+    private lateinit var placesViewModel: PlacesViewModel
 
     private lateinit var placesClient: PlacesClient
 
@@ -63,6 +67,9 @@ class CinesCercanosFragment : Fragment(), OnMapReadyCallback {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        placesViewModel = ViewModelProvider(this)[PlacesViewModel::class.java]
+        placesViewModel.fetchNearbyCinemas(42.878661, -8.547374, 1500)
+
         val mapFragment = childFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment?
 
@@ -73,10 +80,12 @@ class CinesCercanosFragment : Fragment(), OnMapReadyCallback {
         createLocationCallback()
 
         placesClient = Places.createClient(requireContext())
+
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
+        //TODO: Quitar el marker innecesario
         map.addMarker(
             MarkerOptions()
                 .position(LatLng(40.4165000,  -3.7025600))
@@ -88,11 +97,6 @@ class CinesCercanosFragment : Fragment(), OnMapReadyCallback {
         }
 
         startLocationUpdates()
-
-        /*val latLng = LatLng(41.3874, 2.1686)
-        val cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 14f)
-        map.moveCamera(cameraUpdate)*/
-
     }
 
     private fun checkPermissionLocationService(): Boolean{

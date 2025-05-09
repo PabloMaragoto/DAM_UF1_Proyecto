@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
+        //todo: Revisar api_key_maps por seguridad
         Places.initialize(this, getString(R.string.google_maps_key))
 
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -70,6 +71,7 @@ class MainActivity : AppCompatActivity() {
         val bottombar = binding.bottomNavigation
         bottombar.setupWithNavController(navController)
 
+        //ToDO: revisar visibilidad bottom bar al salir bastante rato de la app
         sharedViewModel.BarVisible.observe(this) { isVisible ->
             bottombar.visibility = if (isVisible) View.VISIBLE else View.GONE
             toolbar.visibility = if (isVisible) View.VISIBLE else View.GONE

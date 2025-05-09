@@ -1,6 +1,7 @@
 package com.example.uf1_proyecto.views
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -71,7 +72,8 @@ class ChatsFragment : Fragment() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                //TODO("Not yet implemented")
+                Log.e("FirebaseError", "Error al obtener datos: ${error.message}")
             }
 
         })
