@@ -45,7 +45,7 @@ class HomeFragment : Fragment() {
 
         viewModel.peliculasListPopular.observe(viewLifecycleOwner){
             adapterPeliculaPopular.peliculasList = it
-            adapterPelicula.notifyDataSetChanged()
+            adapterPeliculaPopular.notifyDataSetChanged()
         }
 
         viewModel.getNowPlaying()

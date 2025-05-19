@@ -1,5 +1,6 @@
 package com.example.uf1_proyecto.viewmodels
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -17,15 +18,30 @@ class PlacesViewModel : ViewModel() {
     private var _placesList = MutableLiveData<List<PlaceDetailsModel>>()
     val placesList: LiveData<List<PlaceDetailsModel>> = _placesList
 
-    fun fetchNearbyCinemas(latitude: Number, longitude: Number, radius: Number){
+    fun fetchNearbyCinemas(latitude: Number, longitude: Number, radius: Number, apiKey: String){
 
         val location: String = "$latitude,$longitude"
 
         viewModelScope.launch(Dispatchers.IO){
-            val response = RetrofitClient.googlePlacesService.getNearbyPlaces(Constants.keycode_cinema, location, radius, Constants.keycode_cinema, R.string.google_maps_key.toString()) //ToDO: Verificar el String resources
-            withContext(Dispatchers.Main){
-                _placesList.value = response.body()!!.results.sortedBy { it.placeName }
-            }
+            try {
+                val response = RetrofitClient.googlePlacesService.getNearbyPlaces(Constants.keycode_cinema, location, radius, Constants.keycode_cinema, apiKey) //ToDO: Verificar el String resources
+                withContext(Dispatchers.Main) {
+                    if (response.isSuccessful) {
+                        val body = response.body()
+                        if (body?.results != null) {
+                            _placesList.value = body.results.sortedBy { it.placeName }
+                            Log.e("PlacesViewModel", "Respuesta exitosa: ${response.code()} - ${response.body()}")
+
+                        } else {
+                            Log.e("PlacesViewModel", "Resultados nulos en el cuerpo de la respuesta")
+                        }
+                    } else {
+                        Log.e("PlacesViewModel", "Respuesta no exitosa: ${response.code()} - ${response.message()}")
+                    }
+                }
+            } catch (e: Exception) {
+            Log.e("PlacesViewModel", "Error en fetchNearbyCinemas", e)
+        }
 
         }
     }

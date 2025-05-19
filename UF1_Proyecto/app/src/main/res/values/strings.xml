@@ -37,6 +37,7 @@
     <string name="userNotLogged">User not logged</string>
     <string name="nowPlaying">Now playing</string>
     <string name="popular">Popular</string>
+    <string name="searchCinemas">Search cinemas nearby</string>
     <string name="title_activity_maps">MapsActivity</string>
 
 </resources>

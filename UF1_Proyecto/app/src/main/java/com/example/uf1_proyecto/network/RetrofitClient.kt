@@ -13,7 +13,7 @@ object RetrofitClient {
     }
 
     val googlePlacesService: GooglePlacesService by lazy {
-        val retrofit = Retrofit.Builder().baseUrl(Constants.API_URL_NEARBY)
+        val retrofit = Retrofit.Builder().baseUrl(Constants.API_URL_PLACES)
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create())).build()
         retrofit.create(GooglePlacesService::class.java)
     }

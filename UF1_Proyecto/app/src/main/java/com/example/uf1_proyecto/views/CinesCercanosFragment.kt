@@ -14,7 +14,12 @@ import android.os.Looper
 import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.uf1_proyecto.R
+import com.example.uf1_proyecto.adapters.AdapterCinema
+import com.example.uf1_proyecto.adapters.AdapterPelicula
+import com.example.uf1_proyecto.databinding.FragmentCinesCercanosBinding
 import com.example.uf1_proyecto.viewmodels.PlacesViewModel
 import com.example.uf1_proyecto.viewmodels.SharedViewModel
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -39,20 +44,17 @@ import com.google.firebase.ktx.BuildConfig
 
 class CinesCercanosFragment : Fragment(), OnMapReadyCallback {
 
-    private val REQUEST_LOCATION_PERMISSION_CODE = 100;
+    var _binding: FragmentCinesCercanosBinding? = null
+    val binding: FragmentCinesCercanosBinding get() = _binding!!
 
-    val placeFields = listOf(
-        Place.Field.NAME,
-        Place.Field.ADDRESS,
-        Place.Field.LAT_LNG,
-        Place.Field.PHOTO_METADATAS
-    )
+    private val REQUEST_LOCATION_PERMISSION_CODE = 100;
 
     private lateinit var  fusedLocationClient: FusedLocationProviderClient;
     private lateinit var locationRequest: LocationRequest
     private lateinit var locationCallback: LocationCallback
     private lateinit var map: GoogleMap
     private lateinit var placesViewModel: PlacesViewModel
+    private lateinit var adapterCinema: AdapterCinema
 
     private lateinit var placesClient: PlacesClient
 
@@ -60,15 +62,17 @@ class CinesCercanosFragment : Fragment(), OnMapReadyCallback {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cines_cercanos, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentCinesCercanosBinding.inflate(inflater, container, false)
+        val view = binding.root
+        setUpRecyclerView()
 
         placesViewModel = ViewModelProvider(this)[PlacesViewModel::class.java]
-        placesViewModel.fetchNearbyCinemas(42.878661, -8.547374, 1500)
+        //placesViewModel.fetchNearbyCinemas(42.878661, -8.547374, 2000, getString(R.string.google_maps_key) )
+
+        placesViewModel.placesList.observe(viewLifecycleOwner){
+            adapterCinema.cinemasList = it
+            adapterCinema.notifyDataSetChanged()
+        }
 
         val mapFragment = childFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment?
@@ -81,16 +85,32 @@ class CinesCercanosFragment : Fragment(), OnMapReadyCallback {
 
         placesClient = Places.createClient(requireContext())
 
+        binding.btnBuscarCines.setOnClickListener {
+            val lastLocation = map.cameraPosition.target
+            val lat = lastLocation.latitude
+            val lng = lastLocation.longitude
+
+            placesViewModel.fetchNearbyCinemas(lat, lng, 1500, getString(R.string.google_maps_key))
+        }
+
+        return view
+
+    }
+
+
+    private fun setUpRecyclerView(){
+
+        val layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+
+        binding.recyclerCinemasCercanos.layoutManager = layoutManager
+        adapterCinema = AdapterCinema(requireContext(), arrayListOf())
+        binding.recyclerCinemasCercanos.adapter = adapterCinema
+
+        val decoration = DividerItemDecoration(requireContext(), layoutManager.orientation)
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
-        //TODO: Quitar el marker innecesario
-        map.addMarker(
-            MarkerOptions()
-                .position(LatLng(40.4165000,  -3.7025600))
-                .title("Marker")
-        )
 
         if(!checkPermissionLocationService()){
             requestPermissionLocation()
@@ -140,12 +160,6 @@ class CinesCercanosFragment : Fragment(), OnMapReadyCallback {
     }
 
     private fun createLocationRequest() {
-        locationRequest = LocationRequest.create().apply {
-            interval = 10000
-            fastestInterval = 5000
-            priority = Priority.PRIORITY_HIGH_ACCURACY
-        }
-
         locationRequest = LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY, 10000L).apply {
             setMinUpdateDistanceMeters(10F)
             setGranularity(Granularity.GRANULARITY_PERMISSION_LEVEL) //Esto hará que el nivel de detalle se adapte l tipo de permiso de ubicación elegido
@@ -160,10 +174,16 @@ class CinesCercanosFragment : Fragment(), OnMapReadyCallback {
         map.clear()
         //Todo: queremos que haya un marcador en la posición del usuario?
         //Todo: Google maps api, tiene su propia capa de ubicación (MyLocationEnabled), y en otro proyecto ya ponía un marcador propio, a lo mejor sería bueno usarlo
-        map.addMarker(
-            MarkerOptions()
-                .position(latLng)
-        )
+        placesViewModel.placesList.observe(viewLifecycleOwner) { lista ->
+            for (item in lista) {
+
+                map.addMarker(
+                    MarkerOptions()
+                        .position(LatLng(item.placeLocation.location.latitude.toDouble(),item.placeLocation.location.longitude.toDouble()))
+                        .title(item.placeName)
+                )
+            }
+        }
     }
 
     //TODO: Revisar Manejo propio de android de los permisos (https://developer.android.com/develop/sensors-and-location/location/permissions/runtime?hl=es-419#kotlin)
@@ -192,35 +212,10 @@ class CinesCercanosFragment : Fragment(), OnMapReadyCallback {
         )
     }*/
 
-    //Uso de sdk, no incluye nearby plCES, como  si lo hace la APi
-    /*@SuppressLint("MissingPermission")
-    private fun fetchNearbyCinemas(latLng: LatLng) {
-        val request = FindCurrentPlaceRequest.newInstance(placeFields)
-
-        placesClient.findCurrentPlace(request).addOnSuccessListener { response ->
-            for (placeLikelihood in response.placeLikelihoods) {
-                val place = placeLikelihood.place
-
-                if (place.types?.contains(PlaceTypes.MOVIE_THEATER) == true) {
-                    val name = place.name ?: "Sin nombre"
-                    val address = place.address ?: "Dirección no disponible"
-                    val latLng = place.latLng
-
-
-                    latLng?.let { cinemaLatLng ->
-                        map.addMarker(
-                            MarkerOptions()
-                                .position(cinemaLatLng)
-                                .title(name)
-                                .snippet(address)
-                        )
-                    }
-                }
-            }
-        }.addOnFailureListener { exception ->
-            Log.e("CinesCercanos", "Error: ${exception.message}")
-        }
-    }*/
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 
 
 }

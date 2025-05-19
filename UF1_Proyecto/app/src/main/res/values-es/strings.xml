@@ -35,5 +35,5 @@
     <string name="userNotLogged">Usuario no autenticado</string>
     <string name="nowPlaying">En cines</string>
     <string name="popular">Popular</string>
-
+    <string name="searchCinemas">Busca cines cercanos</string>
 </resources>
